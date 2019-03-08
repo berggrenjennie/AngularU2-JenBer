@@ -1,0 +1,20 @@
+<div class="wrapper" *ngIf="!userStatus">
+  <p>
+    Please login
+  </p>
+
+  <!-- Inputfält med direktiv att ta emot ett namn -->
+  <input type="text" placeholder="Username" [(ngModel)]="username">
+  <br>
+  <br>
+  <!-- Knappar med klickfunktion -->
+  <button type="button" class="" (click)="login()" [routerLink]="['/DashBoard']" [disabled]="username === ''">Login</button>
+</div>
+
+<div class="wrapper" *ngIf="userStatus">
+  <p>
+    You are already logged in!
+  </p>
+  <!-- Knapp med klickfunktion -->
+  <button type="button" class="" (click)="logout()">Log Out</button>
+</div>
